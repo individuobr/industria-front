@@ -1,0 +1,23 @@
+export enum AssentosEnum {
+
+    A1,
+    A2,
+    B3,
+    B4,
+    C5,
+    C6,
+    D7,
+    D8,
+    E9,
+    E10,
+    F11,
+    F12,
+    G13,
+    G14,
+    H15,
+    I16,
+    I17,
+    J18,
+    J19,
+    L20,
+}
