@@ -16,6 +16,10 @@ import { EndPoint } from './provider/util/end-point';
 import { PassageiroService } from './provider/services/passageiro.service';
 import { BageagemService } from './provider/services/bageagem.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ConsultaBagagemComponent } from './consulta-bagagem/consulta-bagagem.component';
+import { ArduinoComponent } from './components/arduino/arduino.component';
+import { ConsultaPassageiroComponent } from './components/consulta-passageiro/consulta-passageiro.component';
+import { AcompanhamentoBagagemComponent } from './components/acompanhamento-bagagem/acompanhamento-bagagem.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     PassageiroComponent,
     BagagemComponent,
     DashComponent, 
-    ConfirmacaoBagagemComponent
+    ConfirmacaoBagagemComponent, ConsultaBagagemComponent, ArduinoComponent, ConsultaPassageiroComponent, AcompanhamentoBagagemComponent
   ],
   imports: [
     HttpClientModule,
