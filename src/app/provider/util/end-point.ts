@@ -9,4 +9,8 @@ export class EndPoint {
     public static gravaPassageiro() : any{
         return this.INDUSTRIA_API + '/passageiro/cadastrar';
     }
+
+    public static gravaBagagem() : any{
+        return this.INDUSTRIA_API + '/bagagem/cadastrar';
+    }
 }

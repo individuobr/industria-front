@@ -6,6 +6,7 @@ import { PassageiroModel } from 'src/app/provider/model/passageiro-model';
 import { MatDialog } from '@angular/material';
 import { ConfirmacaoBagagemComponent } from './confimacao-bagagem.component';
 import { PassageiroService } from 'src/app/provider/services/passageiro.service';
+import { BageagemService } from 'src/app/provider/services/bageagem.service';
 
 @Component({
   selector: 'app-passageiro',
@@ -24,11 +25,13 @@ export class PassageiroComponent implements OnInit {
   confirmacao: boolean;
   disabledButton: boolean = false;
   disabledInputs: boolean = false;
+  passageiro: PassageiroModel;
 
   constructor(
     private formBuilder: FormBuilder,
     public dialog: MatDialog,
     private passageiroService: PassageiroService,
+    private bagagemService: BageagemService,
   ) { }
 
   ngOnInit() {
@@ -46,11 +49,11 @@ export class PassageiroComponent implements OnInit {
     passageiro.voo = this.formPassageiro.value.voo;
 
     this.passageiroService.gravaPassageriro(passageiro).toPromise()
-        .then(res => 
-          console.log(res))
-        .catch(err => {
-          return Promise.reject(err.json().error || 'Erro ao Gravar Passageiro');
-        });
+      .then(res =>
+        this.passageiro = res)
+      .catch(err => {
+        return Promise.reject(err.json().error || 'Erro ao Gravar Passageiro');
+      });
 
     //Abre o Modal de Confirmação de bagagem
     const dialogRef = this.dialog.open(ConfirmacaoBagagemComponent, {
@@ -69,7 +72,7 @@ export class PassageiroComponent implements OnInit {
         this.inicializaFormulario();
       }
     });
-    console.log(passageiro);
+    console.log(this.passageiro);
 
 
   }
@@ -83,10 +86,19 @@ export class PassageiroComponent implements OnInit {
   addBagagem() {
     let bagagem = new BagagemModel();
     bagagem.hashArduino = this.formBagagem.value.idBagagem;
-    this.bagagens.push(bagagem);
-    this.numBagagens = this.bagagens.length;
+    bagagem.peso = this.formBagagem.value.peso;
+    bagagem.idPassageiro = this.passageiro.id;
+    this.numBagagens++;
+
+    this.bagagemService.gravaBagagem(bagagem).toPromise()
+      .then(res =>
+        console.log(res))
+      .catch(err => {
+        return Promise.reject(err.json().error || 'Erro ao Gravar Bagagem do Passageiro');
+      });
     console.log(bagagem);
 
+    this.inicializaFormularioBagagem();
   }
 
   inicializaFormulario() {
@@ -97,13 +109,15 @@ export class PassageiroComponent implements OnInit {
       voo: new FormControl()
 
     });
+    this.inicializaFormularioBagagem();
+  }
+  inicializaFormularioBagagem() {
     this.formBagagem = this.formBuilder.group({
       idBagagem: new FormControl(),
       peso: new FormControl()
 
     });
   }
-
   // Para o Html ter acesso os metodos internos do componente FormGroup
   get idBagagem() {
     return this.formBagagem.get('idBagagem');
