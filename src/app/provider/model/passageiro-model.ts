@@ -7,5 +7,6 @@ export class PassageiroModel {
     nome : string;
     cpf : number;
     assento : AssentosEnum;
+    voo: string;
     bagagens : Array<BagagemModel>;
 }
