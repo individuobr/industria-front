@@ -7,30 +7,22 @@
     <mat-card-content class="example-container">
         <div>
             <form class="cad-passageiro">
-                 <mat-form-field>
-                            <input matInput placeholder="CPF" [disabled]="disabledInputs">
+                <mat-form-field>
+                    <input matInput placeholder="CPF" [disabled]="disabledInputs">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Nome"[disabled]="disabledInputs">
+                    <input matInput placeholder="Nome" [disabled]="disabledInputs">
                 </mat-form-field>
                 <table class="example-full-width" cellspacing="0">
                     <tr>
                         <td>
-                            <mat-form-field>
-                                <mat-label>Assento</mat-label>
-                                <mat-select [disabled]="disabledInputs">
-                                    <mat-option *ngFor="let assento of keys(assentosVagos)" value="assento">{{assentosVagos[assento]}}
-                                    </mat-option>
-                                </mat-select>
-                            </mat-form-field>
+
                         </td>
                         <td>
-                            <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Voo" [disabled]="disabledInputs">
-                            </mat-form-field>
+
                         </td>
                     </tr>
-                    
+
                 </table>
                 <mat-card-actions>
                     <div class="example-button-row">
@@ -39,8 +31,8 @@
                 </mat-card-actions>
             </form>
         </div>
-        <div class="cad-bagagem" *ngIf="habilitaFormBagagem">
-        </div>
+
+
     </mat-card-content>
 
 
