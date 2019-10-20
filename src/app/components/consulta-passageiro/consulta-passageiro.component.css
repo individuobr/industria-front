@@ -1,0 +1,40 @@
+.card {}
+
+.example-container {
+    display: flex;
+    width: auto;
+}
+
+.example-container>* {}
+
+.example-header-image {
+    background-image: url('../../../assets/aviao.png');
+    background-size: cover;
+}
+
+.example-button-row button,
+.example-button-row a {
+    margin-right: 8px;
+}
+
+.cad-passageiro {
+    display: flex;
+    flex-direction: column;
+}
+
+.cad-bagagem {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    width: 30%;
+}
+
+.list-bagagem {
+    border: solid;
+}
+
+.button-align-rigth {}
+
+.badge-quantidade {
+    margin-top: 30px;
+}
