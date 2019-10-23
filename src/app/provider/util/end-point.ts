@@ -29,4 +29,12 @@ export class EndPoint {
     public static zerarStatus(): any {
       return this.INDUSTRIA_API + '/bagagem/zerarStatus';
     }
+
+    public static conectarArduino(): any {
+      return this.INDUSTRIA_API + '/arduino/conectar';
+    }
+
+    public static desconectarArduino(): any {
+      return this.INDUSTRIA_API + '/arduino/desconectar';
+    }
 }

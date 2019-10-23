@@ -28,6 +28,24 @@ export class HttpUtil {
     });
   }
 
+  public conectarArduino(url: string): Promise<void> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    };
+    return this.http.get(url, httpOptions).toPromise().then(() => null);
+  }
+
+  public desconectarArduino(url: string): Promise<void> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    };
+    return this.http.get(url, httpOptions).toPromise().then(() => null);
+  }
+
   public zerarStatus(url: string): Promise<void> {
     const httpOptions = {
       headers: new HttpHeaders({
