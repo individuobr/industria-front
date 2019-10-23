@@ -1,0 +1,20 @@
+.example-container {
+    display: flex;
+    width: auto;
+}
+
+.example-header-image {
+    background-image: url('../../../assets/aviao.png');
+    background-size: cover;
+}
+
+.example-button-row button,
+.example-button-row a {
+    margin-right: 8px;
+}
+
+.example-button-row {
+  text-align: center;
+  padding-left :80px;
+}
+

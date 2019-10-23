@@ -1,0 +1,64 @@
+<mat-card class="card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Cadastro de Passageiro</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="example-container">
+        <div>
+            <form [formGroup]="formPassageiro" class="cad-passageiro">
+                <mat-form-field>
+                    <input matInput placeholder="Nome" formControlName="nome" [disabled]="disabledInputs">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="CPF" formControlName="cpf" [disabled]="disabledInputs">
+                </mat-form-field>
+                <table class="example-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <mat-label>Assento</mat-label>
+                                <mat-select formControlName="assento" [disabled]="disabledInputs">
+                                    <mat-option *ngFor="let assento of keys(assentosVagos)" value="assento">{{assentosVagos[assento]}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Voo" formControlName="voo" [disabled]="disabledInputs">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+                <mat-card-actions>
+                    <div class="example-button-row">
+                        <button mat-raised-button color="primary" (click)="gravarPassageriro()" [disabled]="disabledButton">Gravar</button>
+                        <button mat-raised-button color="primary" (click)="limparFormPassageiro()">Limpar</button>
+                    </div>
+                </mat-card-actions>
+            </form>
+        </div>
+        <div class="cad-bagagem" *ngIf="habilitaFormBagagem">
+            <form [formGroup]="formBagagem">
+                <mat-form-field>
+                    <input matInput placeholder="Id Bagagem" formControlName="idBagagem">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Peso" formControlName="peso">
+                </mat-form-field>
+                <mat-card-actions>
+                    <div class="example-button-row button-align-rigth">
+                        <button mat-raised-button color="primary" (click)="addBagagem()">Adicionar</button>
+                    </div>
+                </mat-card-actions>
+                <p class="badge-quantidade"><span matBadge="{{numBagagens}}" matBadgeColor="success" matBadgeOverlap="false">Quantidade de bagagens</span> </p>
+
+            </form>
+        </div>
+
+    </mat-card-content>
+
+
+
+</mat-card>
