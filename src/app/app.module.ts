@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PassageiroComponent } from './components/passageiro/passageiro.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule, MatOptionModule, MatSelectModule, MatInputModule, MatCardModule, MatButtonModule, MatGridListModule, MatListModule, MatBadge, MatBadgeModule, MatDialogModule } from '@angular/material';
+import { MatFormFieldModule, MatOptionModule, MatSelectModule, MatInputModule, MatCardModule, MatButtonModule, MatGridListModule, MatListModule, MatBadge, MatBadgeModule, MatDialogModule, MatTableModule  } from '@angular/material';
 import { DashComponent } from './components/dash/dash.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CdkStepperModule } from '@angular/cdk/stepper';
@@ -47,7 +47,7 @@ import { AcompanhamentoBagagemComponent } from './components/acompanhamento-baga
     CdkStepperModule,
     MatBadgeModule,
     MatDialogModule,
-
+    MatTableModule
    
    
     
