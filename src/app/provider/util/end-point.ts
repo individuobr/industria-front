@@ -15,14 +15,18 @@ export class EndPoint {
     }
 
     public static buscaNomePassageiro() : any{
-      return this.INDUSTRIA_API + '/passageiro/buscarNome'
+      return this.INDUSTRIA_API + '/passageiro/buscarNome';
     }
 
     public static buscaIdPassageiro() : any{
-      return this.INDUSTRIA_API + '/passageiro/buscarId/{id}'
+      return this.INDUSTRIA_API + '/passageiro/buscarId/{id}';
     }
 
     public static buscaBagagem() : any{
-      return this.INDUSTRIA_API + '/bagagem/buscarhashArduino/{hash_arduino}'
+      return this.INDUSTRIA_API + '/bagagem/buscarhashArduino/{hash_arduino}';
+    }
+
+    public static zerarStatus(): any {
+      return this.INDUSTRIA_API + '/bagagem/zerarStatus';
     }
 }

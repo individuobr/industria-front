@@ -28,6 +28,14 @@ export class HttpUtil {
     });
   }
 
+  public zerarStatus(url: string): Promise<void> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    };
+    return this.http.put(url, httpOptions).toPromise().then(() => null);
+  }
 
   public post(url: string, body: any) {
     const httpOptions = {
