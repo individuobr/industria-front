@@ -9,13 +9,13 @@ import { PassageiroModel } from './../../provider/model/passageiro-model';
 })
 export class ConsultaPassageiroComponent implements OnInit {
 
-  constructor(private passageiro: PassageiroService) { }
+  constructor(private passageiroService: PassageiroService) { }
 
   passageiroslista = [];
   display: boolean = true;
   nome: string;
   cpf: number;
-  passageiros: PassageiroModel = new PassageiroModel();
+  passageiro: PassageiroModel = new PassageiroModel();
   ngOnInit() {
   }
 
@@ -24,11 +24,16 @@ export class ConsultaPassageiroComponent implements OnInit {
   }
 
   buscaNomePassageiro() {
-    this.passageiros.nome = this.nome;
-    this.passageiros.cpf = this.cpf;
-    this.passageiro.buscaNomePassageiro(this.passageiros).then(dados => {
-    this.passageiroslista = dados;
+    this.passageiro.nome = this.nome;
+    this.passageiro.cpf = this.cpf;
+    this.passageiroService.buscaNomePassageiro(this.passageiro).toPromise()
+      .then(dados =>
+        this.passageiroslista = dados
+      )
+      .catch(err => {
+        return Promise.reject(err.json().error || 'Erro ao Gravar Bagagem do Passageiro');
+      });
     this.mudarativo();
-    });
+    
   }
 }

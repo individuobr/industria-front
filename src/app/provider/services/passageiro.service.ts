@@ -11,14 +11,17 @@ export class PassageiroService {
 
   constructor(private httpUtil : HttpUtil) { }
   
-
-
   gravaPassageriro(passageiro : PassageiroModel) : Observable<any> {
     return this.httpUtil.post(EndPoint.gravaPassageiro(), passageiro);
   }
 
   buscaNomePassageiro(passageiro : PassageiroModel) {
-    return this.httpUtil.get(EndPoint.buscaNomePassageiro(), passageiro.nome, passageiro.cpf.toString());
+    return this.httpUtil.get(EndPoint.buscaNomePassageiro(), [passageiro.nome, passageiro.cpf]);
   }
+
+  buscarPassageiroComBagagemNaEsteira(): Observable<any>{
+    return this.httpUtil.get(EndPoint.buscarPassageiroComBagagemNaEsteira());
+  }
+
 
 }

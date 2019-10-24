@@ -26,7 +26,7 @@ export class EndPoint {
       return this.INDUSTRIA_API + '/bagagem/buscarhashArduino/{hash_arduino}';
     }
 
-    public static zerarStatus(): any {
+    public static zerarStatus(): string {
       return this.INDUSTRIA_API + '/bagagem/zerarStatus';
     }
 
@@ -36,5 +36,9 @@ export class EndPoint {
 
     public static desconectarArduino(): any {
       return this.INDUSTRIA_API + '/arduino/desconectar';
+    }
+
+    public static buscarPassageiroComBagagemNaEsteira(): any {
+      return this.INDUSTRIA_API + '/passageiro/acompanhamento';
     }
 }
