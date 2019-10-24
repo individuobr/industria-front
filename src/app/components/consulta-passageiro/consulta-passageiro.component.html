@@ -5,13 +5,39 @@
     </mat-card-header>
 
     <mat-card-content class="example-container">
+
+
         <div>
-            <form class="cad-passageiro">
+            <button pButton *ngIf="!display" (click)="mudarativo()" label="Voltar"></button>
+            <p-table *ngIf="!display" [value]="passageiroslista" [paginator]="true" [rows]="4" #tabela>
+                <ng-template pTemplate="emptymessage">
+                    Nenhum lançamento encontrado
+                </ng-template>
+
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Assento</th>
+                        <th>Voo</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-lancamento>
+                    <tr>
+                        <td>{{lancamento.nome}}</td>
+                        <td>{{lancamento.cpf}}</td>
+                        <td>{{lancamento.assento}}</td>
+                        <td>{{lancamento.voo}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
+            <form class="consulta-passageiro" *ngIf="display">
                 <mat-form-field>
-                    <input matInput placeholder="CPF" [disabled]="disabledInputs">
+                    <input matInput [(ngModel)]="cpf" name="cpf" placeholder="CPF" [disabled]="disabledInputs">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Nome" [disabled]="disabledInputs">
+                    <input matInput [(ngModel)]="nome" name="nome" placeholder="Nome" [disabled]="disabledInputs">
                 </mat-form-field>
                 <table class="example-full-width" cellspacing="0">
                     <tr>
@@ -26,7 +52,7 @@
                 </table>
                 <mat-card-actions>
                     <div class="example-button-row">
-                        <button mat-raised-button color="primary" (click)="limparFormPassageiro()">Consultar</button>
+                        <button mat-raised-button color="primary" (click)="buscaNomePassageiro()">Consultar</button>
                     </div>
                 </mat-card-actions>
             </form>
