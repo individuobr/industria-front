@@ -1,0 +1,79 @@
+.text-center {
+  text-align: center;
+}
+
+.title-color {
+  color: #666666;
+}
+
+.mx-0 {
+  margin-top: 0;
+}
+
+.bg-acompanhamento-bagagem {
+  background-color: lightblue;
+  background-image: url('../../../assets/airplane_background.png');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.blue-sector,
+.green-sector,
+.red-sector,
+.yellow-sector {
+  width: 80%;
+  height: 80%;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 5px;
+}
+
+.blue-sector {
+  border-color: blue;
+}
+
+.green-sector {
+  border-color: green;
+}
+
+.red-sector {
+  border-color: red;
+}
+
+.yellow-sector {
+  border-color: yellow;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 8px;
+  text-transform: uppercase;
+}
+
+.th-blue {
+  background-color: rgba(196, 214, 242) !important;
+}
+
+.th-green {
+  background-color: rgb(196, 242, 208);
+}
+
+.th-red {
+  background-color: rgb(242, 198, 196);
+}
+
+.th-yellow {
+  background-color: rgb(229, 243, 119);
+}
+
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+
