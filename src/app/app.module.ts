@@ -4,7 +4,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PassageiroComponent } from './components/passageiro/passageiro.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { MatFormFieldModule, MatOptionModule, MatSelectModule, MatInputModule, MatCardModule, MatButtonModule, MatGridListModule, MatListModule, MatBadge, MatBadgeModule, MatDialogModule, MatTableModule  } from '@angular/material';
+=======
+import { MatFormFieldModule, MatOptionModule, MatSelectModule, MatInputModule, MatCardModule, MatButtonModule, MatGridListModule, MatListModule, MatBadge, MatBadgeModule, MatDialogModule } from '@angular/material';
+>>>>>>> 1f29f50131259a7ff82700b34406cdd8e743b2b0
 import { DashComponent } from './components/dash/dash.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CdkStepperModule } from '@angular/cdk/stepper';
@@ -17,7 +21,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ArduinoComponent } from './components/arduino/arduino.component';
 import { ConsultaPassageiroComponent } from './components/consulta-passageiro/consulta-passageiro.component';
 import { AcompanhamentoBagagemComponent } from './components/acompanhamento-bagagem/acompanhamento-bagagem.component';
+<<<<<<< HEAD
 
+=======
+import {MatTableModule} from '@angular/material/table';
+import {ButtonModule} from 'primeng/button';
+import {TableModule} from 'primeng/table';
+>>>>>>> 1f29f50131259a7ff82700b34406cdd8e743b2b0
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +41,12 @@ import { AcompanhamentoBagagemComponent } from './components/acompanhamento-baga
   ],
   imports: [
     HttpClientModule,
+<<<<<<< HEAD
+=======
+    TableModule,
+    MatTableModule,
+    ButtonModule,
+>>>>>>> 1f29f50131259a7ff82700b34406cdd8e743b2b0
     FormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -47,7 +63,11 @@ import { AcompanhamentoBagagemComponent } from './components/acompanhamento-baga
     CdkStepperModule,
     MatBadgeModule,
     MatDialogModule,
+<<<<<<< HEAD
     MatTableModule
+=======
+
+>>>>>>> 1f29f50131259a7ff82700b34406cdd8e743b2b0
    
    
     

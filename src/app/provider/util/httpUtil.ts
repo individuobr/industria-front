@@ -12,6 +12,7 @@ export class HttpUtil {
   }
 
 
+<<<<<<< HEAD
   public get(url: string, params?: any) {
     return this.http.get(url, this.getRequestOptionsGetDefault(params))
       .map((res: any) => {
@@ -22,6 +23,49 @@ export class HttpUtil {
        
       });
 
+=======
+  public get(url: string, nome: string, cpf: string): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    };
+    return this.http.get(`${url}/${nome}/${cpf}`, httpOptions).toPromise();
+  }
+
+  public lista(url: string, params?: any): Promise<any> {
+    return this.http.get(url, this.getRequestOptionsGetDefault(params)).toPromise()
+    .then(dados => console.log(dados)).catch(erro => {
+      return throwError(erro);
+    });
+  }
+
+  public conectarArduino(url: string): Promise<void> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    };
+    return this.http.get(url, httpOptions).toPromise().then(() => null);
+  }
+
+  public desconectarArduino(url: string): Promise<void> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    };
+    return this.http.get(url, httpOptions).toPromise().then(() => null);
+  }
+
+  public zerarStatus(url: string): Promise<void> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    };
+    return this.http.put(url, httpOptions).toPromise().then(() => null);
+>>>>>>> 1f29f50131259a7ff82700b34406cdd8e743b2b0
   }
 
   public post(url: string, body: any) {

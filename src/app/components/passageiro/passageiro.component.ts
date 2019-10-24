@@ -53,6 +53,10 @@ export class PassageiroComponent implements OnInit {
         this.passageiro = res)
       .catch(err => {
         return Promise.reject(err.json().error || 'Erro ao Gravar Passageiro');
+<<<<<<< HEAD
+=======
+        console.log(err);
+>>>>>>> 1f29f50131259a7ff82700b34406cdd8e743b2b0
       });
 
     //Abre o Modal de Confirmação de bagagem
@@ -88,7 +92,10 @@ export class PassageiroComponent implements OnInit {
     bagagem.hashArduino = this.formBagagem.value.idBagagem;
     bagagem.peso = this.formBagagem.value.peso;
     bagagem.idPassageiro = this.passageiro.id;
+<<<<<<< HEAD
     bagagem.status = 0;
+=======
+>>>>>>> 1f29f50131259a7ff82700b34406cdd8e743b2b0
     this.numBagagens++;
 
     this.bagagemService.gravaBagagem(bagagem).toPromise()

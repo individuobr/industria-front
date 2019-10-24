@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 .card {}
 
+=======
+>>>>>>> 1f29f50131259a7ff82700b34406cdd8e743b2b0
 .example-container {
     display: flex;
     width: auto;
 }
 
+<<<<<<< HEAD
 .example-container>* {}
 
+=======
+>>>>>>> 1f29f50131259a7ff82700b34406cdd8e743b2b0
 .example-header-image {
     background-image: url('../../../assets/aviao.png');
     background-size: cover;
@@ -17,6 +23,7 @@
     margin-right: 8px;
 }
 
+<<<<<<< HEAD
 .cad-passageiro {
     display: flex;
     flex-direction: column;
@@ -27,14 +34,31 @@
     flex-direction: column;
     margin-left: auto;
     width: 30%;
+=======
+.consulta-passageiro {
+    display: flex;
+    flex-direction: column;
+>>>>>>> 1f29f50131259a7ff82700b34406cdd8e743b2b0
 }
 
 .list-bagagem {
     border: solid;
 }
 
+<<<<<<< HEAD
 .button-align-rigth {}
 
 .badge-quantidade {
     margin-top: 30px;
 }
+=======
+.ui-button {
+  background-color: #3f51b5;
+  border: 1px solid #3f51b5;
+}
+
+.ui-button:enabled:hover {
+  background-color: #3f51b5;
+  border-color: #3f51b5;
+}
+>>>>>>> 1f29f50131259a7ff82700b34406cdd8e743b2b0
