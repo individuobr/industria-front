@@ -89,6 +89,7 @@ export class PassageiroComponent implements OnInit {
     bagagem.hashArduino = this.formBagagem.value.idBagagem;
     bagagem.peso = this.formBagagem.value.peso;
     bagagem.idPassageiro = this.passageiro.id;
+    bagagem.status=0;
     this.numBagagens++;
 
     this.bagagemService.gravaBagagem(bagagem).toPromise()
