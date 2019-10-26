@@ -1,11 +1,19 @@
 <div class="dash-header">
-    <p class="header-title">Sistema Automação da Esterira Aeroportuaria</p>
-</div>
-<mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile>
-        <app-passageiro class="card-default"></app-passageiro>
-    </mat-grid-tile>
-    <mat-grid-tile>Consulta de Passageiros e Bagagens</mat-grid-tile>
-    <mat-grid-tile>Tela copia do Acompanhamento de Bagagens</mat-grid-tile>
-    <mat-grid-tile>Configuração Arduino(Conexão, Start da Esterira)</mat-grid-tile>
-</mat-grid-list>
+    <div class="bg-dash">
+        <h1 class="text-center title-color mx-0">Sistema Automação da Esteira Aeroportuaria</h1>
+        <mat-grid-list cols="2" rowHeight="2:1">
+            <mat-grid-tile>
+                <app-passageiro class="card-default"></app-passageiro>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <app-consulta-passageiro class="app-consulta-passageiro"></app-consulta-passageiro>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <app-acompanhamento-bagagem class="card-default"></app-acompanhamento-bagagem>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <app-arduino></app-arduino>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>

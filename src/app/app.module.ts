@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ArduinoComponent } from './components/arduino/arduino.component';
 import { ConsultaPassageiroComponent } from './components/consulta-passageiro/consulta-passageiro.component';
 import { AcompanhamentoBagagemComponent } from './components/acompanhamento-bagagem/acompanhamento-bagagem.component';
+import {ButtonModule} from 'primeng/button';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,9 @@ import { AcompanhamentoBagagemComponent } from './components/acompanhamento-baga
     
   ],
   imports: [
+    TableModule,
+    MatTableModule,
+    ButtonModule,
     HttpClientModule,
     FormsModule,
     BrowserModule,

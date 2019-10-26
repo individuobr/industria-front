@@ -19,7 +19,7 @@
                             <mat-form-field>
                                 <mat-label>Assento</mat-label>
                                 <mat-select formControlName="assento" [disabled]="disabledInputs">
-                                    <mat-option *ngFor="let assento of keys(assentosVagos)" value="assento">{{assentosVagos[assento]}}
+                                    <mat-option *ngFor="let assento of keys(assentosVagos)" [value]="assento">{{assentosVagos[assento]}}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
