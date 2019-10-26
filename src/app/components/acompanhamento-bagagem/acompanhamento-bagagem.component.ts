@@ -70,11 +70,20 @@ export class AcompanhamentoBagagemComponent implements OnInit {
         if(res.length != 0){
           res.forEach(element => {
             if(this.dataSource_blue.data.length != 0){
-              if(element.hash_arduino.includes(this.dataSource_blue.data)){
+//              console.log("hash_arduino: " + element.hash_arduino);
+//              console.log(this.dataSource_blue.filteredData);
+//              console.log(this.dataSource_blue.filteredData.includes(element.hash_arduino));
+              let bagagemNaEsteira = false;
+              this.dataSource_blue.filteredData.forEach(b => {
+                if(element.hash_arduino == b.hash_arduino) bagagemNaEsteira = true;
+              })
+              //if(element.hash_arduino.includes(this.dataSource_blue.data)){
               //if(this.dataSource_blue.data.includes(element)){
+              if(bagagemNaEsteira) {
                 console.log("Ja existe");
               }else{
                 this.dataSource_blue.data.push(element);
+                //setTimeout((element) => removeElementFromArray(element), 2000);
               }
           }else{
             this.dataSource_blue.data.push(element);
@@ -91,3 +100,8 @@ export class AcompanhamentoBagagemComponent implements OnInit {
   }
 }
 
+function removeElementFromArray(element) {
+  this.dataSource_blue.filteredData.forEach(b => {
+    if(element.hash_arduino == b.hash_arduino) console.log(b.hash_arduino);
+  })
+}
